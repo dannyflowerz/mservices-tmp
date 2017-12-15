@@ -1,0 +1,30 @@
+## API gateway configuration
+
+# Application name
+spring:
+  application:
+    name: api-gateway
+
+# Tomcat configuration
+server:
+  port: 8070
+
+# Gateway configuration
+zuul:
+ prefix: /api # services will be mapped under the /api URI
+# routes:
+#  homepage:
+#    path: /homepage/**
+#    url: http://localhost:9080
+    
+#ribbon:
+#  eureka:
+#    enabled: false
+
+# Discovery service configuration
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.99.100:8761/eureka/ # VM address
+    register-with-eureka: false

@@ -1,0 +1,24 @@
+## Service registry configuration
+
+# Application name
+spring:
+  application:
+    name: service-registry
+
+# Tomcat configuration
+server:
+  port: 8761
+
+# Logging configuration
+logging:
+  level:
+    com.netflix.eureka: info
+    com.netflix.discovery: info
+
+# Discovery service configuration
+eureka:
+  instance:
+    hostname: locahost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

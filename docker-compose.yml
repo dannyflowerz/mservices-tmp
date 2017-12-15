@@ -1,0 +1,62 @@
+## TODO make it work with docker swarm (stack) to be able to use the deploy tags
+
+version: "3"
+services:
+  service-registry:
+    image: blueharvest/service-registry
+#    deploy:
+#      replicas: 1
+#      resources:
+#        limits:
+#          cpus: "0.1"
+#          memory: 50M
+#      restart_policy:
+#        condition: on-failure
+    ports:
+    - "8761:8761"
+    networks:
+    - msnet
+  homepage1:
+    image: blueharvest/homepage
+#    deploy:
+#      replicas: 2
+#      resources:
+#        limits:
+#          cpus: "0.1"
+#          memory: 50M
+#      restart_policy:
+#        condition: on-failure
+    ports:
+      - "9080:9080"
+    networks:
+      - msnet
+  homepage2:
+    image: blueharvest/homepage
+#    deploy:
+#      replicas: 2
+#      resources:
+#        limits:
+#          cpus: "0.1"
+#          memory: 50M
+#      restart_policy:
+#        condition: on-failure
+    ports:
+      - "9081:9080"
+    networks:
+      - msnet
+  api-gateway:
+    image: blueharvest/api-gateway
+#    deploy:
+#      replicas: 1
+#      resources:
+#        limits:
+#          cpus: "0.1"
+#          memory: 50M
+#      restart_policy:
+#        condition: on-failure
+    ports:
+    - "8070:8070"
+    networks:
+    - msnet
+networks:
+  msnet:

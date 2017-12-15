@@ -1,0 +1,17 @@
+## Homepage client configuration
+
+# Application name
+spring:
+  application:
+    name: homepage-client
+
+# Tomcat configuration
+server:
+  port: 9090
+
+# Discovery service configuration
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://192.168.99.100:8761/eureka/ # VM address
